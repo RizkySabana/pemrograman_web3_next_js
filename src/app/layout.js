@@ -21,20 +21,37 @@ export const metadata = {
 export default function RootLayout({ children }) {
 return (
     <html lang="id">
-      <body style={{ margin: 0, fontFamily: 'Segoe UI, sans-serif' }}>
+        <body
+          style={{
+            margin: 0,
+            fontFamily: "Segoe UI, sans-serif",
+            minHeight: "100vh",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
         <header style={{ background: '#1e3a8a', color: 'white', padding: '14px 28px', display: 'flex', justifyContent: 'space-between' }}>
           <strong>🏛️ SIAKAD POLITEKNIK TAKUMI</strong>
           <nav style={{ display: 'flex', gap: '18px' }}>
             <Link href="/" style={{ color: 'white', textDecoration: 'none' }}>Beranda</Link>
             <Link href="/mahasiswa" style={{ color: 'white', textDecoration: 'none' }}>Direktori Mahasiswa</Link>
             <Link href="/dokumen/2026/kurikulum" style={{ color: 'white', textDecoration: 'none' }}>Arsip Dokumen</Link>
+            <Link href="/matakuliah" style={{ color: "white", textDecoration: "none" }}> Mata Kuliah </Link>
             <Link href="/dashboard" style={{ color: '#fde047', textDecoration: 'none', fontWeight: 'bold' }}>Dashboard KRS</Link>
           </nav>
         </header>
 
-        <div style={{ padding: '24px', maxWidth: '960px', margin: '0 auto' }}>
-          {children}
-        </div>
+        <main
+            style={{
+              padding: "24px",
+              width: "100%",
+              maxWidth: "960px",
+              margin: "0 auto",
+              boxSizing: "border-box",
+              flex: 1,
+            }}>
+            {children}
+        </main>
         <footer
   style={{
     background: "#1e3a8a",
